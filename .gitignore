@@ -4,3 +4,4 @@ playwright-report/
 package-lock.json
 yarn-error.log
 *.log
+.dashboard-runs/

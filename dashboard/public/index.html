@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RPA Extension Test Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <h1>RPA Extension Test Dashboard</h1>
+          <p id="envLine">Loading...</p>
+        </div>
+        <button id="refreshButton" type="button" title="刷新状态">Refresh</button>
+      </section>
+
+      <section class="workspace">
+        <aside class="test-panel">
+          <div class="panel-heading">
+            <h2>Tests</h2>
+            <span id="activeState">Idle</span>
+          </div>
+          <div id="testList" class="test-list"></div>
+        </aside>
+
+        <section class="result-panel">
+          <div class="result-header">
+            <div>
+              <h2 id="runTitle">No Run Selected</h2>
+              <p id="runMeta">Select a test and start it.</p>
+            </div>
+            <button id="runButton" type="button" disabled>Run Selected</button>
+          </div>
+          <pre id="logOutput" class="log-output">日志会显示在这里。</pre>
+        </section>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -121,6 +121,49 @@ Functional tests cover:
 - Chrome provider scenario tests: `ChromeScenario.*`
 - Non-interactive real browser capture: `Chrome.CaptureAuto`
 
+## Test Dashboard
+
+Start the local dashboard from the host:
+
+```powershell
+cd C:\workspace\rpa_extension_test_site
+yarn dashboard
+```
+
+Open:
+
+```text
+http://127.0.0.1:8787/
+```
+
+The dashboard can run one selected test at a time and stream the result log.
+Available entries include:
+
+- Local `chrome_unit_test.exe`
+- Local `browser_manager_unit_test.exe`
+- Local fixture, browser smoke, and unpacked extension smoke tests
+- VM full regression
+- VM unit-only run
+- VM browser smoke run
+- VM extension smoke run
+- VM provider scenario and capture run
+
+The VM runs are started through `labs/vmware_browser_lab/start-desktop-tests.ps1`.
+After the VM scheduled task starts, the dashboard polls `C:\browser-e2e\logs`
+over WinRM and displays the latest desktop test log.
+
+Environment variables can override defaults before starting the dashboard:
+
+```powershell
+$env:RPAD_REPO = "C:\workspace\rpad"
+$env:RPAD_EXTENSION_REPO = "C:\workspace\web_extension_unified"
+$env:RPAD_EXTENSION_BUILD = "C:\workspace\web_extension_unified\build-mv3-rpad-e2e-3"
+$env:RPA_VM_HOST = "192.168.150.129"
+$env:RPA_VM_USER = "wpwor"
+$env:RPA_VM_PASSWORD = "1"
+$env:RPA_QIHU360_PATH = "C:\Users\wpwor\AppData\Roaming\360se6\Application\360se.exe"
+```
+
 ## Stop Site Servers
 
 The start script prints spawned process IDs. Stop only those PIDs, or use:

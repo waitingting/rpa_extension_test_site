@@ -8,6 +8,7 @@
     "start:main": "http-server sites/extension-fixtures/main -a 127.0.0.1 -p 8007 -c-1 --cors",
     "start:cross-a": "http-server sites/extension-fixtures/cross-a -a 127.0.0.1 -p 8008 -c-1 --cors",
     "start:cross-b": "http-server sites/extension-fixtures/cross-b -a 127.0.0.1 -p 8009 -c-1 --cors",
+    "dashboard": "node dashboard/server.js",
     "test:browser": "playwright test --headed",
     "test:browser:smoke": "playwright test browser-smoke.spec.js --headed",
     "test:fixture": "playwright test fixture-site.spec.js --headed",
