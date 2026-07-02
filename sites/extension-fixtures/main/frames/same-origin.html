@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Same Origin Frame</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <section class="panel">
+      <h1 id="same-frame-title">Same Origin Frame</h1>
+      <label>Frame input <input id="same-frame-input" name="sameFrameInput" value="same origin"></label>
+      <button id="same-frame-button" type="button">Same Frame Button</button>
+      <a id="same-frame-link" href="#same-link-target">Same Frame Link</a>
+      <table id="same-frame-table">
+        <tbody>
+          <tr>
+            <th scope="row">Frame row</th>
+            <td><input id="same-frame-table-input" value="cell input"></td>
+          </tr>
+        </tbody>
+      </table>
+      <iframe id="nested-same-frame" title="Nested same-origin frame" src="nested.html"></iframe>
+    </section>
+  </main>
+</body>
+</html>

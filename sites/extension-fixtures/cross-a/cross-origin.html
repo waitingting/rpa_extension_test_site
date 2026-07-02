@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cross Origin A</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section class="panel">
+      <h1 id="cross-a-title">Cross Origin A</h1>
+      <p>Served from http://127.0.0.1:8008.</p>
+      <label>Cross text <input id="cross-a-input" name="crossAInput" value="cross origin a"></label>
+      <label>Cross select
+        <select id="cross-a-select">
+          <option>One</option>
+          <option selected>Two</option>
+        </select>
+      </label>
+      <button id="cross-a-button" type="button">Cross A Button</button>
+      <table id="cross-a-table">
+        <thead>
+          <tr><th>Key</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>alpha</td><td><input id="cross-a-cell-input" value="inside cross table"></td></tr>
+        </tbody>
+      </table>
+      <iframe id="deep-cross-frame" title="Nested cross-origin frame" src="http://127.0.0.1:8009/deep-cross.html"></iframe>
+    </section>
+  </main>
+</body>
+</html>

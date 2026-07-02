@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en" data-fixture="root">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RPA Extension Full Fixture</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1 id="page-title">RPA Extension Full Fixture</h1>
+      <p id="subtitle">Forms, tables, lists, dynamic DOM, same-origin frames, nested frames, and cross-origin frames.</p>
+    </div>
+    <nav aria-label="Primary">
+      <a id="nav-forms" href="#forms">Forms</a>
+      <a id="nav-table" href="#table">Table</a>
+      <a id="nav-frames" href="#frames">Frames</a>
+      <button id="header-action" type="button">Header Action</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="forms" class="panel" aria-labelledby="forms-title">
+      <h2 id="forms-title">Element Types</h2>
+      <form id="full-form" name="fullForm" autocomplete="off">
+        <fieldset>
+          <legend>Text-like inputs</legend>
+          <label>Text <input id="input-text" name="textValue" type="text" value="alpha"></label>
+          <label>Password <input id="input-password" name="passwordValue" type="password" value="secret"></label>
+          <label>Search <input id="input-search" name="searchValue" type="search" value="query"></label>
+          <label>Email <input id="input-email" name="emailValue" type="email" value="user@example.test"></label>
+          <label>URL <input id="input-url" name="urlValue" type="url" value="https://example.test/path"></label>
+          <label>Telephone <input id="input-tel" name="telValue" type="tel" value="123-456"></label>
+          <label>Readonly <input id="input-readonly" name="readonlyValue" type="text" value="readonly" readonly></label>
+          <label>Disabled <input id="input-disabled" name="disabledValue" type="text" value="disabled" disabled></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Numeric and date inputs</legend>
+          <label>Number <input id="input-number" name="numberValue" type="number" min="-5" max="50" value="7"></label>
+          <label>Range <input id="input-range" name="rangeValue" type="range" min="0" max="100" value="42"></label>
+          <label>Date <input id="input-date" name="dateValue" type="date" value="2026-06-05"></label>
+          <label>Time <input id="input-time" name="timeValue" type="time" value="10:30"></label>
+          <label>Month <input id="input-month" name="monthValue" type="month" value="2026-06"></label>
+          <label>Week <input id="input-week" name="weekValue" type="week" value="2026-W23"></label>
+          <label>DateTime <input id="input-datetime" name="datetimeValue" type="datetime-local" value="2026-06-05T10:30"></label>
+          <label>Color <input id="input-color" name="colorValue" type="color" value="#1f7a8c"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Choice controls</legend>
+          <label><input id="checkbox-a" name="featureA" type="checkbox" checked> Checkbox A</label>
+          <label><input id="checkbox-b" name="featureB" type="checkbox"> Checkbox B</label>
+          <label><input id="radio-basic" name="plan" type="radio" value="basic" checked> Basic</label>
+          <label><input id="radio-pro" name="plan" type="radio" value="pro"> Pro</label>
+          <label>Single select
+            <select id="select-single" name="singleSelect">
+              <option value="alpha">Alpha</option>
+              <option value="beta" selected>Beta</option>
+              <option value="gamma">Gamma</option>
+            </select>
+          </label>
+          <label>Multiple select
+            <select id="select-multiple" name="multiSelect" multiple size="3">
+              <option selected>North</option>
+              <option>South</option>
+              <option selected>West</option>
+            </select>
+          </label>
+          <label>Datalist
+            <input id="input-datalist" name="datalistValue" list="fixture-options" value="red">
+          </label>
+          <datalist id="fixture-options">
+            <option value="red"></option>
+            <option value="green"></option>
+            <option value="blue"></option>
+          </datalist>
+        </fieldset>
+
+        <fieldset>
+          <legend>Rich and file-like controls</legend>
+          <label>Textarea <textarea id="textarea-main" name="notes">Line one
+Line two</textarea></label>
+          <label>File <input id="input-file" name="fileValue" type="file"></label>
+          <div id="editable-main" class="editable" contenteditable="true" role="textbox" aria-label="Editable region">Editable text region</div>
+          <button id="button-submit" type="submit">Submit</button>
+          <button id="button-reset" type="reset">Reset</button>
+          <button id="button-plain" type="button">Plain Button</button>
+          <input id="input-button" type="button" value="Input Button">
+          <input id="input-submit" type="submit" value="Input Submit">
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="table" class="panel" aria-labelledby="table-title">
+      <h2 id="table-title">Complex Table</h2>
+      <table id="complex-table">
+        <caption>Quarterly device audit</caption>
+        <thead>
+          <tr>
+            <th rowspan="2" scope="col">Device</th>
+            <th colspan="2" scope="colgroup">Owner</th>
+            <th colspan="3" scope="colgroup">Status</th>
+            <th rowspan="2" scope="col">Action</th>
+          </tr>
+          <tr>
+            <th scope="col">Team</th>
+            <th scope="col">User</th>
+            <th scope="col">Online</th>
+            <th scope="col">Score</th>
+            <th scope="col">Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-row-id="r1">
+            <th scope="row"><a id="device-link-1" href="#device-a">Device A</a></th>
+            <td>Ops</td>
+            <td>Ada</td>
+            <td><input id="table-online-1" type="checkbox" checked></td>
+            <td><input id="table-score-1" type="number" value="98"></td>
+            <td><textarea id="table-comment-1">Stable</textarea></td>
+            <td><button id="table-action-1" type="button">Inspect</button></td>
+          </tr>
+          <tr data-row-id="r2">
+            <th scope="row">Device B</th>
+            <td rowspan="2">QA</td>
+            <td>Lin</td>
+            <td><input id="table-online-2" type="checkbox"></td>
+            <td><input id="table-score-2" type="number" value="73"></td>
+            <td><select id="table-comment-2"><option>Review</option><option selected>Blocked</option></select></td>
+            <td><button id="table-action-2" type="button">Inspect</button></td>
+          </tr>
+          <tr data-row-id="r3">
+            <th scope="row">Device C</th>
+            <td>Mira</td>
+            <td><input id="table-online-3" type="checkbox" checked></td>
+            <td colspan="2"><progress id="table-progress-3" max="100" value="64"></progress></td>
+            <td><button id="table-action-3" type="button">Inspect</button></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="7">Footer cell with colspan</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section id="lists" class="panel" aria-labelledby="lists-title">
+      <h2 id="lists-title">Lists and ARIA</h2>
+      <ul id="nested-list">
+        <li>Parent item
+          <ol>
+            <li><a id="nested-list-link" href="#child-one">Child one</a></li>
+            <li><button id="nested-list-button" type="button">Child button</button></li>
+          </ol>
+        </li>
+        <li>Second item</li>
+      </ul>
+      <dl id="definition-list">
+        <dt>Term A</dt>
+        <dd>Definition A</dd>
+        <dt>Term B</dt>
+        <dd>Definition B</dd>
+      </dl>
+      <div id="aria-tree" role="tree" aria-label="Fixture tree">
+        <div role="treeitem" aria-expanded="true" tabindex="0">Root node</div>
+        <div role="group">
+          <div id="aria-child" role="treeitem" tabindex="-1">Child node</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="media" class="panel" aria-labelledby="media-title">
+      <h2 id="media-title">Media and Special Elements</h2>
+      <img id="fixture-image" src="assets/sample.svg" alt="Local sample asset" width="160" height="96">
+      <canvas id="fixture-canvas" width="180" height="96" aria-label="Canvas fixture"></canvas>
+      <svg id="inline-svg" role="img" aria-label="Inline SVG fixture" viewBox="0 0 120 60">
+        <rect x="4" y="4" width="112" height="52" rx="6" fill="#f0f7ff" stroke="#1f7a8c"></rect>
+        <circle cx="34" cy="30" r="14" fill="#f4a261"></circle>
+        <text x="58" y="35" font-size="14">SVG</text>
+      </svg>
+      <details id="fixture-details">
+        <summary id="fixture-summary">Details summary</summary>
+        <p>Hidden details content.</p>
+      </details>
+      <meter id="fixture-meter" min="0" max="100" value="71">71</meter>
+      <progress id="fixture-progress" max="100" value="45">45</progress>
+      <button id="open-dialog" type="button">Open Dialog</button>
+      <dialog id="fixture-dialog">
+        <p id="dialog-text">Dialog content</p>
+        <button id="close-dialog" type="button">Close</button>
+      </dialog>
+    </section>
+
+    <section id="dynamic" class="panel" aria-labelledby="dynamic-title">
+      <h2 id="dynamic-title">Dynamic DOM and Existing Markers</h2>
+      <div id="shadow-host"></div>
+      <div id="pre-marked-a" data-dgid="101">Saved page marker A</div>
+      <div id="pre-marked-b" data-dgid="101">Saved page marker B with duplicate data-dgid</div>
+      <button id="add-row" type="button">Add Dynamic Row</button>
+      <button id="remove-row" type="button">Remove Dynamic Row</button>
+      <div id="dynamic-list" aria-live="polite"></div>
+    </section>
+
+    <section id="frames" class="panel" aria-labelledby="frames-title">
+      <h2 id="frames-title">Frames</h2>
+      <div class="frame-grid">
+        <iframe id="same-origin-frame" title="Same origin frame" src="frames/same-origin.html"></iframe>
+        <iframe id="cross-origin-frame" title="Cross origin frame" src="http://127.0.0.1:8008/cross-origin.html"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

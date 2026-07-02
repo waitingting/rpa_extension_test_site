@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nested Same Origin Frame</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <section class="panel">
+      <h1 id="nested-title">Nested Same Origin Frame</h1>
+      <label>Nested text <input id="nested-input" value="nested same origin"></label>
+      <button id="nested-button" type="button">Nested Button</button>
+      <div id="nested-editable" class="editable" contenteditable="true">Nested editable content</div>
+      <ul id="nested-frame-list">
+        <li>Nested item one</li>
+        <li><a id="nested-frame-link" href="#nested-target">Nested item link</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

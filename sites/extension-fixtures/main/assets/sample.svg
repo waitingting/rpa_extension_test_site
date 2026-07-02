@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="96" viewBox="0 0 160 96" role="img" aria-label="Sample fixture image">
+  <rect width="160" height="96" rx="10" fill="#fff7e6"/>
+  <rect x="16" y="18" width="54" height="42" rx="6" fill="#1f7a8c"/>
+  <circle cx="108" cy="48" r="24" fill="#e76f51"/>
+  <path d="M20 78h120" stroke="#264653" stroke-width="5" stroke-linecap="round"/>
+</svg>

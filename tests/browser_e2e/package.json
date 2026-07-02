@@ -1,0 +1,13 @@
+{
+  "name": "rpad-browser-e2e",
+  "private": true,
+  "scripts": {
+    "test": "playwright test --headed",
+    "test:smoke": "playwright test browser-smoke.spec.js --headed",
+    "test:fixture": "playwright test fixture-site.spec.js --headed",
+    "test:extension": "playwright test rpad-extension-smoke.spec.js --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1"
+  }
+}
